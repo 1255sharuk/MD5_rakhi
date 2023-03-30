@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>MD5 Hash Generator</title>
+        </head>
+        <body>
+            <h2>MD5 Hash Generator</h2>
+            @using (Html.BeginForm())
+            {
+                <p>
+                    @Html.Label("Text to Hash:")
+                    @Html.TextBox("textToHash")
+                </p>
+                <button type="submit">Generate Hash and Save</button>
+            }
+
+            @if (!string.IsNullOrEmpty(ViewBag.Hash))
+            {
+                <h2>Hashed Text</h2>
+                <p>The MD5 hash of "@ViewBag.TextToHash" is:</p>
+                <p>@ViewBag.Hash</p>
+               
+            }
+        </body>
+    </html>
+
+  
